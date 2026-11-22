@@ -3,714 +3,1187 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#653451">
-<meta name="description" content="ЛактоСТОП — доказательная информация о лактостазе, грудном вскармливании и поддержке мам.">
+<meta name="description" content="ЛактоСТОП — научная информация о лактостазе и грудном вскармливании.">
 <title>ЛактоСТОП — Ты не одна. Мы рядом ♡</title>
+
 <style>
-:root{
-  --plum:#653451;
-  --rose:#a96891;
-  --milk:#fffbfd;
-  --pink:#f5dce8;
-  --lilac:#e9dff5;
-  --ink:#584557;
-  --shadow:0 14px 35px #6534511c;
+:root {
+  --plum: #653451;
+  --dark: #4e2941;
+  --rose: #a96891;
+  --milk: #fffbfd;
+  --pink: #f5dce8;
+  --lilac: #e9dff5;
+  --text: #604b5d;
+  --shadow: 0 12px 30px #6534511a;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--milk);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Arial,sans-serif}
-h1,h2,h3,.logo{font-family:Georgia,"Times New Roman",serif;color:var(--plum);line-height:1.2}
-h1{font-size:clamp(40px,8vw,70px);margin:15px 0}
-h2{font-size:clamp(29px,5vw,40px);margin:10px 0 17px}
-h3{font-size:22px;margin:8px 0}
-p{margin:10px 0 16px}
-a{color:var(--plum)}
-button,input,textarea{font:inherit}
-button{cursor:pointer}
-button:focus-visible,a:focus-visible,summary:focus-visible{
- outline:3px solid #9a638c;outline-offset:3px
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--milk);
+  color: var(--text);
+  font: 16px/1.65 Arial, sans-serif;
 }
-.container{max-width:1080px;margin:auto;padding:0 22px}
-section{padding:65px 0;scroll-margin-top:25px}
-.pink{background:linear-gradient(145deg,#fff0f6,#fffbfd)}
-.lilac{background:linear-gradient(145deg,#eee3f7,#fff9fc)}
-.eyebrow{
- color:var(--rose);font-size:12px;font-weight:800;
- letter-spacing:2px;text-transform:uppercase
+h1, h2, h3, .logo {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--plum);
+  line-height: 1.2;
 }
-.muted{color:#806c7c}
-.center{text-align:center}
-.card{
- background:linear-gradient(145deg,#fff,#fffbfe);
- border:1px solid #f1dae8;border-radius:26px;
- padding:26px;box-shadow:var(--shadow);margin:17px 0
+h1 { font-size: clamp(40px, 8vw, 70px); }
+h2 { font-size: clamp(29px, 5vw, 40px); }
+h3 { font-size: 22px; }
+p { margin: 10px 0 17px; }
+a { color: var(--plum); }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, a:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 3px;
 }
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.tile{
- background:white;border:1px solid #efdce8;border-radius:22px;
- padding:22px;box-shadow:0 8px 20px #65345112
+.container {
+  max-width: 1080px;
+  margin: auto;
+  padding: 0 22px;
 }
-.tile .emoji{font-size:30px}
-.tile h3{font-size:19px}
-.btn{
- display:inline-block;background:linear-gradient(145deg,#905171,#653451);
- color:#fff;border:0;border-radius:999px;padding:15px 25px;
- font-weight:750;text-decoration:none;
- box-shadow:0 6px 0 #47263b,0 13px 24px #65345140;
- transition:transform .2s,box-shadow .2s
+section {
+  padding: 60px 0;
+  scroll-margin-top: 20px;
 }
-.btn:hover{transform:translateY(-2px)}
-.btn:active{transform:translateY(3px);box-shadow:0 3px 0 #47263b}
-.btn-light{
- background:#fff6fb;color:var(--plum);
- border:1px solid #d8b1ca;border-radius:999px;
- padding:12px 18px;font-weight:700
+.pink {
+  background: linear-gradient(145deg, #fff0f6, #fffbfd);
 }
-.tag{
- display:inline-block;background:#f7e6f0;color:var(--plum);
- padding:6px 13px;border-radius:100px;font-size:12px;font-weight:750
+.lilac {
+  background: linear-gradient(145deg, #efe5f8, #fff9fc);
 }
-.hero{
- position:relative;overflow:hidden;
- background:radial-gradient(circle at 70% 20%,#fff9ff 0,transparent 45%),
- linear-gradient(155deg,#f5d6e5,#ece0fa 60%,#fffbfd);
- padding:22px 0 95px
+.eyebrow {
+  color: var(--rose);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
-nav{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
-.logo{font-size:29px;font-weight:750;text-decoration:none}
-.navlinks{display:flex;gap:15px;flex-wrap:wrap}
-.navlinks a{text-decoration:none;font-size:13px;font-weight:700}
-.hero-grid{
- position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;
- align-items:center;gap:40px;padding-top:70px
+.card {
+  background: white;
+  border: 1px solid #f0dbe7;
+  border-radius: 25px;
+  padding: 25px;
+  margin: 16px 0;
+  box-shadow: var(--shadow);
 }
-.hero p{max-width:490px}
-.hero-art{
- width:100%;max-width:430px;border-radius:44% 44% 33% 33%;
- position:relative;z-index:1;filter:drop-shadow(0 15px 20px #a56d9238)
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
 }
-.cloud{
- position:absolute;pointer-events:none;z-index:0;
- width:180px;height:60px;border-radius:100px;
- background:linear-gradient(145deg,#fff,#fdf6ff);
- box-shadow:0 12px 28px #9b7fa435;
- animation:drift 9s ease-in-out infinite
+.tile {
+  background: white;
+  padding: 22px;
+  border: 1px solid #efdae7;
+  border-radius: 22px;
+  box-shadow: 0 7px 20px #65345110;
 }
-.cloud:before,.cloud:after{
- content:"";position:absolute;border-radius:50%;background:inherit
+.tile .emoji { font-size: 30px; }
+.tile h3 { margin: 8px 0; }
+.tile p { font-size: 14px; }
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(145deg, #925372, #653451);
+  padding: 15px 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 5px 0 #47263b, 0 10px 20px #65345135;
 }
-.cloud:before{width:100px;height:95px;left:25px;bottom:9px}
-.cloud:after{width:80px;height:76px;right:15px;bottom:8px}
-.cloud.one{top:180px;left:-100px}
-.cloud.two{top:290px;right:-95px;animation-delay:-4s}
-.cloud.three{bottom:-25px;left:32%;opacity:.6;animation-delay:-6s}
-@keyframes drift{
- 0%,100%{transform:translate(0,0)}
- 50%{transform:translate(15px,-14px)}
+.btn:active { transform: translateY(3px); }
+.btn-light {
+  border: 1px solid #d8b4ca;
+  border-radius: 999px;
+  background: #fff5fa;
+  color: var(--plum);
+  padding: 12px 17px;
+  font-weight: bold;
 }
-.section-head{max-width:730px;margin-bottom:28px}
-.warning{
- background:#fff0f1;border:2px solid #dcaab8;
- border-radius:20px;padding:23px;margin-top:23px
+.tag {
+  display: inline-block;
+  background: #f7e5f0;
+  color: var(--plum);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 999px;
 }
-.warning h3{color:#873b53}
-.warning p{color:#653c50}
-.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
-.step{display:flex;gap:15px;align-items:flex-start}
-.round{
- flex:0 0 47px;height:47px;background:#f7e4f0;
- border-radius:16px;display:grid;place-items:center;font-size:24px
+.hidden { display: none !important; }
+
+/* Главный экран */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 25px 0 90px;
+  background:
+    radial-gradient(circle at 80% 15%, #fff9ff, transparent 50%),
+    linear-gradient(155deg, #f5d8e7, #ece0f9 60%, #fffbfd);
 }
-.step h3{font-size:18px}
-.step p{font-size:14px;margin:4px 0}
-details{
- background:#fff;border:1px solid #efdbe6;
- border-radius:18px;padding:19px 22px;margin:13px 0;
- box-shadow:0 5px 18px #6534510a
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-summary{cursor:pointer;font-weight:750;color:var(--plum)}
-details p{margin-top:14px}
-.illustration{
- display:block;width:100%;max-height:390px;object-fit:contain;
- filter:drop-shadow(0 12px 20px #a56d9230)
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
 }
-.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
-.option{
- display:block;width:100%;text-align:left;
- background:#fff5fa;border:1px solid #e6c5d9;
- border-radius:16px;padding:17px 18px;margin:12px 0;
- color:var(--plum);font-weight:700
+.navlinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
-.option:hover{background:#f5e5f0}
-.response{
- margin-top:18px;padding:18px;background:#f7e7f0;
- border-left:5px solid var(--plum);border-radius:14px
+.navlinks a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
 }
-.progress{display:flex;gap:6px;margin:18px 0}
-.progress span{flex:1;height:8px;border-radius:10px;background:#ecdce8}
-.progress span.active{background:var(--plum)}
-.quiz-heading{display:flex;align-items:center;justify-content:space-between;gap:15px}
-.quote{border-left:4px solid var(--rose);padding-left:18px}
-.review{
- border:1px solid #ebd1e2;border-radius:21px;padding:20px;
- background:white;margin:15px 0
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+  padding-top: 65px;
 }
-.avatar{
- width:42px;height:42px;display:grid;place-items:center;
- background:#f5e4f1;border-radius:50%;font-size:23px
+.hero h1 { margin: 18px 0; }
+.hero h1 em { color: #9f6085; }
+.hero-copy p { max-width: 470px; }
+.hero-image, .illustration {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 18px #ac79983a);
 }
-.review-head{display:flex;gap:12px;align-items:center}
-.review-head strong{color:var(--plum)}
-.review-head small{display:block;color:#8e7788}
-.reply{margin:12px 0 0 24px;background:#f7ebf3;border-radius:15px;padding:14px}
-textarea,input{
- width:100%;padding:14px;margin:7px 0 12px;
- background:#fff;border:1px solid #d9b6cb;
- border-radius:13px;color:var(--ink)
+.cloud {
+  position: absolute;
+  background: #fff;
+  width: 170px;
+  height: 56px;
+  border-radius: 100px;
+  box-shadow: 0 10px 25px #98759b30;
+  animation: float 9s ease-in-out infinite;
+  pointer-events: none;
 }
-.envelope{background:none;border:0;font-size:76px;transition:transform .3s}
-.envelope:hover{transform:rotate(-8deg) scale(1.05)}
-.hidden{display:none!important}
-.foot{background:linear-gradient(155deg,#ead6e8,#f6e5f0);text-align:center;padding:50px 20px}
-.sources a{display:block;margin:12px 0;overflow-wrap:anywhere}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
-.reveal.visible{opacity:1;transform:translateY(0)}
-@media(max-width:760px){
- .hero-grid,.grid,.steps,.media-grid{grid-template-columns:1fr}
- .hero-grid{padding-top:40px;gap:20px}
- .hero-copy{text-align:center}
- .hero p{margin-left:auto;margin-right:auto}
- .hero-art{max-width:290px;display:block;margin:auto}
- nav{justify-content:center;text-align:center}
- .navlinks{justify-content:center}
- section{padding:48px 0}
- .card{padding:20px}
- .cloud{transform:scale(.75)}
+.cloud:before, .cloud:after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
 }
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
- .reveal{opacity:1;transform:none}
+.cloud:before {
+  width: 92px;
+  height: 88px;
+  left: 23px;
+  bottom: 7px;
+}
+.cloud:after {
+  width: 75px;
+  height: 71px;
+  right: 14px;
+  bottom: 6px;
+}
+.cloud.one { top: 170px; left: -95px; }
+.cloud.two { top: 285px; right: -90px; animation-delay: -4s; }
+.cloud.three { bottom: -25px; left: 32%; opacity: .6; }
+@keyframes float {
+  0%, 100% { transform: translate(0,0); }
+  50% { transform: translate(12px,-13px); }
+}
+
+/* Рекомендации */
+.steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+.round {
+  flex: 0 0 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  background: #f8e8f1;
+  border-radius: 14px;
+  font-size: 23px;
+}
+.step h3 { font-size: 19px; margin: 0; }
+.step p { font-size: 14px; margin: 5px 0; }
+.warning {
+  background: #fff0f2;
+  border: 2px solid #ddaebc;
+  border-radius: 20px;
+  padding: 23px;
+  margin-top: 20px;
+}
+.warning h3 { color: #93465c; }
+
+/* Информация */
+details {
+  background: white;
+  border: 1px solid #efdae7;
+  border-radius: 17px;
+  padding: 18px;
+  margin: 12px 0;
+}
+summary {
+  font-weight: bold;
+  color: var(--plum);
+  cursor: pointer;
+}
+details p { margin-top: 14px; }
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Квиз */
+.option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 10px 0;
+  border: 1px solid #e7c8dc;
+  border-radius: 15px;
+  background: #fff4fa;
+  color: var(--plum);
+  padding: 16px;
+  font-weight: bold;
+}
+.option:hover { background: #f4e2ee; }
+.response {
+  margin: 16px 0;
+  padding: 17px;
+  border-radius: 14px;
+  border-left: 4px solid var(--plum);
+  background: #f7e8f2;
+}
+.progress {
+  display: flex;
+  gap: 6px;
+  margin: 18px 0;
+}
+.progress span {
+  height: 7px;
+  flex: 1;
+  border-radius: 10px;
+  background: #eddae7;
+}
+.progress span.active { background: var(--plum); }
+.quiz-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Народные методы — БЕЗ details */
+.method-card {
+  background: #fff;
+  border: 1px solid #ecd3e1;
+  border-radius: 23px;
+  padding: 23px;
+  margin: 15px 0;
+  box-shadow: var(--shadow);
+}
+.method-card h3 { margin-top: 0; }
+.method-card p { margin-bottom: 0; }
+.method-card .verdict {
+  display: inline-block;
+  color: #8c4568;
+  background: #fae7f1;
+  border-radius: 100px;
+  padding: 5px 11px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* История и отзывы */
+.quote {
+  border-left: 4px solid var(--rose);
+  padding-left: 17px;
+}
+.review {
+  border: 1px solid #ebd3e2;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 14px 0;
+}
+.review-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.avatar {
+  flex: 0 0 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: #f5e4f0;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+}
+.review-head strong { color: var(--plum); }
+.review-head small {
+  display: block;
+  color: #997e90;
+}
+.reply {
+  margin: 12px 0 0 24px;
+  padding: 13px;
+  background: #f8eaf3;
+  border-radius: 14px;
+  font-size: 14px;
+}
+input, textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid #debcd0;
+  background: white;
+  color: var(--text);
+  border-radius: 12px;
+  padding: 13px;
+  margin: 8px 0 12px;
+}
+.envelope {
+  border: 0;
+  background: transparent;
+  font-size: 75px;
+  transition: transform .3s;
+}
+.envelope:hover { transform: scale(1.08) rotate(-6deg); }
+.center { text-align: center; }
+.sources a {
+  display: block;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+.footer {
+  background: linear-gradient(155deg, #ead7e8, #f7e7f1);
+  padding: 45px 20px;
+  text-align: center;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(17px);
+  transition: opacity .6s, transform .6s;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media(max-width:760px) {
+  .hero-grid, .grid, .steps, .media-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-grid { gap: 20px; padding-top: 40px; }
+  .hero-copy { text-align: center; }
+  .hero-copy p { margin-left: auto; margin-right: auto; }
+  .hero-image { max-width: 300px; margin: auto; }
+  nav { justify-content: center; text-align: center; }
+  .navlinks { justify-content: center; }
+  section { padding: 45px 0; }
+  .card { padding: 20px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  *, *:before, *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
 }
 </style>
 </head>
+
 <body>
-<header class="hero">
- <div class="cloud one" aria-hidden="true"></div>
- <div class="cloud two" aria-hidden="true"></div>
- <div class="cloud three" aria-hidden="true"></div>
- <div class="container">
-  <nav>
-   <a class="logo" href="#top">✿ ЛактоСТОП</a>
-   <div class="navlinks">
-    <a href="#help">Помощь</a>
-    <a href="#care">Рекомендации</a>
-    <a href="#benefits">Польза ГВ</a>
-    <a href="#quiz">Квиз</a>
-    <a href="#methods">Мифы</a>
-    <a href="#moms">Мамы рядом</a>
-   </div>
-  </nav>
-  <div class="hero-grid" id="top">
-   <div class="hero-copy">
-    <span class="eyebrow">Знания помогают · Поддержка объединяет</span>
-    <h1>Ты не одна.<br><em>Мы рядом ♡</em></h1>
-    <p>Понятная информация о лактостазе, грудном вскармливании и бережной поддержке молодых мам.</p>
-    <a href="#help" class="btn">♡ Мне нужна помощь</a>
-   </div>
-   <div>
-    <img class="hero-art" src="IMG_3935.jpeg"
-      alt="Нежная иллюстрация мамы с малышом">
-   </div>
+
+<header class="hero" id="top">
+  <div class="cloud one" aria-hidden="true"></div>
+  <div class="cloud two" aria-hidden="true"></div>
+  <div class="cloud three" aria-hidden="true"></div>
+
+  <div class="container">
+    <nav>
+      <a class="logo" href="#top">✿ ЛактоСТОП</a>
+      <div class="navlinks">
+        <a href="#help">Помощь</a>
+        <a href="#care">Рекомендации</a>
+        <a href="#benefits">Польза ГВ</a>
+        <a href="#quiz">Квиз</a>
+        <a href="#methods">Мифы</a>
+        <a href="#moms">Мамы рядом</a>
+      </div>
+    </nav>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Знания помогают · Поддержка объединяет</span>
+        <h1>Ты не одна.<br><em>Мы рядом ♡</em></h1>
+        <p>Бережное пространство о лактостазе, грудном вскармливании и поддержке молодых мам.</p>
+        <a class="btn" href="#help">♡ Мне нужна помощь</a>
+      </div>
+
+      <img class="hero-image" src="IMG_3935.jpeg"
+        alt="Иллюстрация мамы с малышом">
+    </div>
   </div>
- </div>
 </header>
 
 <main>
+
+<!-- ПОМОЩНИК -->
 <section id="help">
- <div class="container">
-  <div class="section-head reveal">
-   <span class="eyebrow">01 / Бережное начало</span>
-   <h2>Что тебя беспокоит? ☁</h2>
-   <p>Выбери ситуацию, чтобы получить общую информацию. Помощник не устанавливает диагноз.</p>
+  <div class="container">
+    <span class="eyebrow">01 / Первый шаг</span>
+    <h2>Что тебя беспокоит? ☁</h2>
+    <p>Выбери подходящую ситуацию. Подсказки носят информационный характер и не заменяют диагностику.</p>
+
+    <div class="card">
+      <button class="option" onclick="showHelp(0)">💗 Боль или уплотнение в груди</button>
+      <button class="option" onclick="showHelp(1)">🌡️ Боль и высокая температура</button>
+      <button class="option" onclick="showHelp(2)">🌷 Как предупредить трудности?</button>
+      <div id="helpAnswer" class="response hidden" role="status"></div>
+    </div>
   </div>
-  <div class="card reveal">
-   <button class="option" onclick="showHelp(0)">💗 Болит грудь или есть уплотнение</button>
-   <button class="option" onclick="showHelp(1)">🌡️ Боль и высокая температура</button>
-   <button class="option" onclick="showHelp(2)">🌷 Хочу узнать о профилактике</button>
-   <div class="response hidden" id="helpAnswer" role="status"></div>
-  </div>
- </div>
 </section>
 
+<!-- РЕКОМЕНДАЦИИ -->
 <section id="care" class="pink">
- <div class="container">
-  <div class="section-head reveal">
-   <span class="eyebrow">02 / Доказательная медицина</span>
-   <h2>Бережная помощь шаг за шагом</h2>
-   <p>Что полезно знать при болезненности и уплотнении молочной железы.</p>
+  <div class="container">
+    <span class="eyebrow">02 / Доказательная помощь</span>
+    <h2>Бережная помощь шаг за шагом</h2>
+    <p>Что полезно знать при болезненности и уплотнении груди.</p>
+
+    <div class="steps">
+      <div class="card step reveal">
+        <div class="round">🤱</div>
+        <div>
+          <h3>Кормление в привычном ритме</h3>
+          <p>Если возможно, продолжай кормить ребёнка по его потребности. Не пытайся специально опорожнить грудь полностью.</p>
+        </div>
+      </div>
+      <div class="card step reveal">
+        <div class="round">❄️</div>
+        <div>
+          <h3>Прохладный компресс</h3>
+          <p>Используй прохладный компресс через ткань на 10–20 минут для облегчения боли и отёка.</p>
+        </div>
+      </div>
+      <div class="card step reveal">
+        <div class="round">🫶</div>
+        <div>
+          <h3>Без сильного массажа</h3>
+          <p>Интенсивное разминание может повреждать ткани и усиливать воспалительный отёк.</p>
+        </div>
+      </div>
+      <div class="card step reveal">
+        <div class="round">🫖</div>
+        <div>
+          <h3>Отдых и питьё по жажде</h3>
+          <p>Не нужно заставлять себя пить чрезмерно много воды. Попроси близких помочь с повседневными делами.</p>
+        </div>
+      </div>
+      <div class="card step reveal">
+        <div class="round">🩺</div>
+        <div>
+          <h3>Обезболивание</h3>
+          <p>Парацетамол и ибупрофен обычно совместимы с ГВ, но учитывай противопоказания и рекомендации врача.</p>
+        </div>
+      </div>
+      <div class="card step reveal">
+        <div class="round">💟</div>
+        <div>
+          <h3>Наблюдение за состоянием</h3>
+          <p>При ухудшении состояния или отсутствии улучшения в течение 12–24 часов обратись к врачу.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning">
+      <h3>⚕ Когда срочно нужна помощь?</h3>
+      <p>Температура около 40 °C, сильный озноб, выраженная слабость или быстрое ухудшение самочувствия — повод срочно обратиться за медицинской помощью. Не ограничивайся народными методами.</p>
+    </div>
   </div>
-  <div class="steps">
-   <div class="card step reveal">
-    <div class="round">🤱</div>
-    <div><h3>Привычный ритм кормления</h3>
-    <p>Продолжай кормление по потребности ребёнка, если это возможно. Не пытайся полностью «опустошить» грудь.</p></div>
-   </div>
-   <div class="card step reveal">
-    <div class="round">❄️</div>
-    <div><h3>Прохладный компресс</h3>
-    <p>Используй прохладу через ткань примерно на 10–20 минут, чтобы облегчить боль и отёк.</p></div>
-   </div>
-   <div class="card step reveal">
-    <div class="round">🫶</div>
-    <div><h3>Не разминай грудь через боль</h3>
-    <p>Интенсивный массаж способен повреждать ткани и усиливать отёк.</p></div>
-   </div>
-   <div class="card step reveal">
-    <div class="round">🫖</div>
-    <div><h3>Отдыхай и пей по жажде</h3>
-    <p>Не нужно принуждать себя пить чрезмерно много воды. По возможности попроси близких помочь.</p></div>
-   </div>
-   <div class="card step reveal">
-    <div class="round">🩺</div>
-    <div><h3>Обсуди обезболивание</h3>
-    <p>Парацетамол и ибупрофен обычно совместимы с грудным вскармливанием, но важно учитывать противопоказания.</p></div>
-   </div>
-   <div class="card step reveal">
-    <div class="round">💟</div>
-    <div><h3>Следи за состоянием</h3>
-    <p>Если симптомы усиливаются или не улучшаются в течение 12–24 часов, обратись к врачу.</p></div>
-   </div>
-  </div>
-  <div class="warning reveal">
-   <h3>⚕ Когда нужна срочная медицинская помощь?</h3>
-   <p>При температуре около 40 °C, сильном ознобе, выраженной слабости или быстром ухудшении самочувствия необходимо срочно обратиться за медицинской помощью. Не ограничивайся домашними методами.</p>
-  </div>
- </div>
 </section>
 
+<!-- ЛАКТОСТАЗ И МАСТИТ -->
 <section id="info">
- <div class="container">
-  <span class="eyebrow">03 / Простыми словами</span>
-  <h2>Лактостаз и мастит</h2>
-  <details><summary>Что называют лактостазом?</summary>
-   <p>Так часто называют болезненность, нагрубание и уплотнение груди на фоне нарушения оттока молока. Современная концепция также учитывает воспалительный отёк и сужение молочных протоков.</p>
-  </details>
-  <details><summary>Что такое мастит?</summary>
-   <p>Мастит — воспаление ткани молочной железы, которое может быть небактериальным или бактериальным. Определять диагноз и необходимость лечения должен медицинский специалист.</p>
-  </details>
-  <details><summary>Нужно ли прекращать грудное вскармливание?</summary>
-   <p>Во многих случаях грудное вскармливание можно продолжать с учётом состояния женщины и рекомендаций врача.</p>
-  </details>
- </div>
+  <div class="container">
+    <span class="eyebrow">03 / Простыми словами</span>
+    <h2>Лактостаз и мастит</h2>
+
+    <details>
+      <summary>Что называют лактостазом?</summary>
+      <p>Так часто называют болезненность, нагрубание и уплотнение груди на фоне затруднённого оттока молока. Современные представления также учитывают воспалительный отёк и сужение протоков.</p>
+    </details>
+
+    <details>
+      <summary>Что такое мастит?</summary>
+      <p>Мастит — воспаление ткани молочной железы. Оно бывает небактериальным или бактериальным. Диагноз и необходимость лечения определяет медицинский специалист.</p>
+    </details>
+
+    <details>
+      <summary>Всегда ли нужно прекращать кормление?</summary>
+      <p>Нет. Во многих случаях грудное вскармливание можно продолжать с учётом состояния женщины и рекомендаций врача.</p>
+    </details>
+
+    <details>
+      <summary>Почему важно правильное прикладывание?</summary>
+      <p>Комфортное и эффективное прикладывание помогает ребёнку получать молоко и снижает риск травмирования сосков. Если кормление болезненно, полезна консультация специалиста.</p>
+    </details>
+  </div>
 </section>
 
-<section class="lilac" id="benefits">
- <div class="container">
-  <span class="eyebrow">04 / Для мамы и малыша</span>
-  <h2>Грудное вскармливание — больше, чем питание ♡</h2>
-  <div class="media-grid">
-   <div>
-    <p>Грудное молоко содержит питательные и защитные компоненты. Грудное вскармливание связано с рядом преимуществ для здоровья ребёнка и матери.</p>
-    <p>При этом каждая семья уникальна, а трудности с кормлением — повод обратиться за поддержкой, а не винить себя.</p>
-   </div>
-   <img class="illustration" src="IMG_3936.jpeg"
-      alt="Акварельная иллюстрация матери с ребёнком" loading="lazy">
+<!-- ПОЛЬЗА ГВ -->
+<section id="benefits" class="lilac">
+  <div class="container">
+    <span class="eyebrow">04 / Для мамы и малыша</span>
+    <h2>Грудное вскармливание — больше, чем питание ♡</h2>
+
+    <div class="media-grid">
+      <div>
+        <p>Грудное молоко содержит питательные и защитные компоненты. Грудное вскармливание связано с преимуществами для здоровья малыша и матери.</p>
+        <p>Если кормление вызывает трудности, обращаться за помощью — нормально.</p>
+      </div>
+      <img class="illustration" src="IMG_3936.jpeg"
+        alt="Акварельная иллюстрация матери с ребёнком" loading="lazy">
+    </div>
+
+    <div class="grid">
+      <div class="tile reveal">
+        <div class="emoji">🛡️</div>
+        <h3>Защита малыша</h3>
+        <p>Грудное молоко содержит антитела и другие защитные компоненты.</p>
+      </div>
+      <div class="tile reveal">
+        <div class="emoji">🧸</div>
+        <h3>Питание</h3>
+        <p>Состав грудного молока адаптирован к потребностям растущего ребёнка.</p>
+      </div>
+      <div class="tile reveal">
+        <div class="emoji">💗</div>
+        <h3>Здоровье мамы</h3>
+        <p>ГВ связано со снижением риска некоторых заболеваний, включая рак молочной железы.</p>
+      </div>
+      <div class="tile reveal">
+        <div class="emoji">🌷</div>
+        <h3>Близость</h3>
+        <p>Кормление может быть временем общения и телесного контакта с малышом.</p>
+      </div>
+    </div>
   </div>
-  <div class="grid">
-   <div class="tile reveal"><div class="emoji">🛡️</div><h3>Защита малыша</h3>
-    <p>Грудное молоко содержит антитела и другие защитные компоненты.</p></div>
-   <div class="tile reveal"><div class="emoji">🧸</div><h3>Питание и развитие</h3>
-    <p>Состав молока адаптирован к потребностям растущего ребёнка.</p></div>
-   <div class="tile reveal"><div class="emoji">💗</div><h3>Здоровье мамы</h3>
-    <p>Грудное вскармливание связано со снижением риска ряда заболеваний, включая рак молочной железы.</p></div>
-   <div class="tile reveal"><div class="emoji">🌷</div><h3>Тепло и близость</h3>
-    <p>Кормление может быть временем телесного контакта и общения с малышом.</p></div>
-  </div>
- </div>
 </section>
 
+<!-- ПРИКЛАДЫВАНИЕ -->
 <section id="latch">
- <div class="container">
-  <span class="eyebrow">05 / Полезный навык</span>
-  <h2>Как правильно приложить ребёнка к груди?</h2>
-  <p>Комфортное прикладывание помогает организовать кормление и уменьшить травмирование сосков.</p>
-  <div class="card">
-   <details><summary>1. Устройтесь удобно</summary>
-    <p>Поверни ребёнка к себе животиком. Его голова, шея и туловище должны находиться примерно на одной линии.</p>
-   </details>
-   <details><summary>2. Носик напротив соска</summary>
-    <p>Расположи малыша так, чтобы он мог слегка запрокинуть голову и широко открыть рот.</p>
-   </details>
-   <details><summary>3. Дождись широко открытого рта</summary>
-    <p>Слегка коснись соском верхней губы, дождись широкого открывания рта и приблизь ребёнка к груди.</p>
-   </details>
-   <details><summary>4. Подбородок ближе к груди</summary>
-    <p>Подбородок касается груди, нос остаётся свободным для дыхания, ребёнок глубоко захватывает грудь, а не только сосок.</p>
-   </details>
-   <details><summary>5. Проверь комфорт</summary>
-    <p>Обрати внимание на глотание и отсутствие постоянной сильной боли. Если боль сохраняется, нужна помощь специалиста.</p>
-   </details>
+  <div class="container">
+    <span class="eyebrow">05 / Полезный навык</span>
+    <h2>Как правильно приложить ребёнка к груди?</h2>
+    <p>Пошаговая инструкция по организации комфортного кормления.</p>
+
+    <div class="card">
+      <details>
+        <summary>1. Устройтесь удобно</summary>
+        <p>Поверни малыша животиком к себе. Его голова, шея и туловище должны находиться примерно на одной линии.</p>
+      </details>
+      <details>
+        <summary>2. Носик напротив соска</summary>
+        <p>Расположи ребёнка так, чтобы он мог слегка запрокинуть голову и широко открыть рот.</p>
+      </details>
+      <details>
+        <summary>3. Дождись широко открытого рта</summary>
+        <p>Можно слегка коснуться соском верхней губы ребёнка, дождаться широкого открывания рта и приблизить малыша к груди.</p>
+      </details>
+      <details>
+        <summary>4. Подбородок касается груди</summary>
+        <p>Ребёнок глубоко захватывает грудь, а не только сосок. Подбородок касается груди, нос остаётся свободным для дыхания.</p>
+      </details>
+      <details>
+        <summary>5. Проверь ощущения</summary>
+        <p>При эффективном кормлении заметно глотание. Постоянной выраженной боли быть не должно. Если она сохраняется, обратись к специалисту.</p>
+      </details>
+    </div>
+
+    <a class="btn-light" href="https://www.nhs.uk/best-start-in-life/baby/feeding-your-baby/breastfeeding/how-to-breastfeed/latching-on/" target="_blank" rel="noopener noreferrer">Инструкция NHS ↗</a>
   </div>
-  <a class="btn-light" href="https://www.nhs.uk/best-start-in-life/baby/feeding-your-baby/breastfeeding/how-to-breastfeed/latching-on/" target="_blank" rel="noopener noreferrer">
-   Посмотреть инструкцию NHS ↗
-  </a>
- </div>
 </section>
 
+<!-- КВИЗ -->
 <section id="quiz" class="pink">
- <div class="container">
-  <span class="eyebrow">06 / Интерактивный квиз</span>
-  <h2>Миф или факт?</h2>
-  <p>Наш прежний тест из шести вопросов — теперь в новом оформлении.</p>
-  <div class="card">
-   <div class="quiz-heading">
-    <span class="tag">✦ Проверь себя</span>
-    <span id="counter"></span>
-   </div>
-   <div class="progress" id="progress"></div>
-   <h3 id="question"></h3>
-   <div id="quizOptions">
-    <button class="option" onclick="answer(false)">☁ Это миф</button>
-    <button class="option" onclick="answer(true)">♡ Это факт</button>
-   </div>
-   <div class="response hidden" id="feedback" role="status"></div>
-   <button class="btn-light hidden" id="next" onclick="nextQuestion()">Следующий вопрос →</button>
+  <div class="container">
+    <span class="eyebrow">06 / Интерактивный квиз</span>
+    <h2>Миф или факт?</h2>
+    <p>Проверь знания о лактостазе и безопасных методах помощи.</p>
+
+    <div class="card">
+      <div class="quiz-top">
+        <span class="tag">✦ Проверь себя</span>
+        <span id="counter">1 из 6</span>
+      </div>
+      <div id="progress" class="progress"></div>
+      <h3 id="question"></h3>
+
+      <div id="quizOptions">
+        <button class="option" onclick="answer(false)">☁ Это миф</button>
+        <button class="option" onclick="answer(true)">♡ Это факт</button>
+      </div>
+
+      <div id="feedback" class="response hidden" role="status"></div>
+      <button id="next" class="btn-light hidden" onclick="nextQuestion()">Следующий вопрос →</button>
+    </div>
   </div>
- </div>
 </section>
 
+<!-- НАРОДНЫЕ МЕТОДЫ -->
 <section id="methods">
- <div class="container">
-  <span class="eyebrow">07 / Разбор популярных советов</span>
-  <h2>Народные методы против науки</h2>
-  <p>Нажми на карточку, чтобы узнать, почему совет может быть бесполезным или небезопасным.</p><details>
-<details><summary>🥬 Капустные листья</summary>
-<p>Капустные листья не лечат лактостаз. Убедительных доказательств их лечебной эффективности нет. Охлаждённый лист может временно уменьшить дискомфорт, но не заменяет медицинскую помощь.</p>
-</details>
-  <details><summary>✋ Интенсивный массаж</summary>
-   <p>Сильное разминание может травмировать ткани и усиливать воспалительный отёк.</p>
-  </details>
-  <details><summary>♨️ Горячие компрессы</summary>
-   <p>Сильный нагрев может усиливать отёк. Слишком горячие компрессы также способны вызвать ожоги.</p>
-  </details>
-  <details><summary>🍶 Спиртовые компрессы</summary>
-   <p>Не являются доказанным лечением мастита и могут раздражать кожу.</p>
-  </details>
-  <details><summary>🍯 Мёд и домашние мази</summary>
-   <p>Их эффективность не подтверждена качественными исследованиями. Возможны аллергические реакции и раздражение кожи.</p>
-  </details>
-  <details><summary>💧 Сцеживание «до последней капли»</summary>
-   <p>Чрезмерное сцеживание может усиливать стимуляцию выработки молока и поддерживать проблему.</p>
-  </details>
-  <details><summary>🚫 «Пусть муж отсосёт молоко»</summary>
-   <p>Отсасывание молока взрослым человеком не является рекомендованным лечением лактостаза или мастита. Оно не устраняет воспалительный отёк, а интенсивное воздействие способно травмировать ткани.</p>
-   <p>При возможности продолжай кормление ребёнка в привычном ритме. Если ребёнок не может приложиться, обсуди с медицинским специалистом подходящий способ сцеживания. Не нужно заставлять ребёнка «рассасывать застой» силой.</p>
-  </details>
- </div>
+  <div class="container">
+    <span class="eyebrow">07 / Разбор популярных советов</span>
+    <h2>Народные методы против науки</h2>
+    <p>Семь распространённых советов и их разбор с позиции доказательной медицины.</p>
+
+    <div class="method-card">
+      <h3>🥬 Капустные листья</h3>
+      <span class="verdict">Не являются доказанным лечением</span>
+      <p><strong>Миф:</strong> капустные листья лечат лактостаз.</p>
+      <p>Капустные листья не устраняют воспалительный отёк и сужение молочных протоков. Убедительных доказательств их лечебной эффективности нет. Охлаждённый лист может временно облегчить дискомфорт за счёт охлаждения, но это не лечение причины.</p>
+      <p><strong>Что делать вместо этого?</strong> Использовать прохладный компресс через ткань для уменьшения боли и отёка. При ухудшении состояния обратиться к врачу.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>✋ Интенсивный массаж груди</h3>
+      <span class="verdict">Потенциально опасно</span>
+      <p>Сильное разминание может повреждать ткани, усиливать воспалительный отёк и болезненность.</p>
+      <p><strong>Правильнее:</strong> избегать интенсивного давления на болезненный участок и не пытаться силой «разбить застой».</p>
+    </div>
+
+    <div class="method-card">
+      <h3>♨️ Горячие компрессы</h3>
+      <span class="verdict">Не рекомендуются как лечение</span>
+      <p>Сильное нагревание может усиливать отёк, а слишком горячие компрессы способны вызвать ожоги.</p>
+      <p><strong>Правильнее:</strong> для облегчения боли использовать прохладный компресс через ткань.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>🍶 Спиртовые компрессы</h3>
+      <span class="verdict">Нет доказанной эффективности</span>
+      <p>Спиртовые компрессы не являются доказанным лечением лактационного воспаления или мастита. Они могут раздражать кожу.</p>
+      <p><strong>Правильнее:</strong> использовать безопасные меры облегчения симптомов и при необходимости обратиться к врачу.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>🍯 Мёд и домашние мази</h3>
+      <span class="verdict">Эффективность не доказана</span>
+      <p>Нет качественных доказательств, что такие средства лечат лактостаз. Некоторые ингредиенты могут вызывать раздражение и аллергические реакции.</p>
+      <p><strong>Правильнее:</strong> не наносить самодельные смеси на повреждённую кожу и не заменять ими медицинскую помощь.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>💧 Сцеживание «до последней капли»</h3>
+      <span class="verdict">Может усугубить проблему</span>
+      <p>Чрезмерное сцеживание может усиливать стимуляцию выработки молока и поддерживать нагрубание и воспаление.</p>
+      <p><strong>Правильнее:</strong> сохранять привычный ритм кормления, не пытаться полностью опорожнять грудь.</p>
+    </div>
+
+    <div class="method-card">
+      <h3>🚫 «Пусть муж отсосёт молоко»</h3>
+      <span class="verdict">Не является рекомендованным лечением</span>
+      <p>Отсасывание молока взрослым человеком не устраняет воспалительный отёк или сужение протоков. Интенсивное воздействие может дополнительно травмировать болезненные ткани.</p>
+      <p><strong>Правильнее:</strong> если ребёнок может эффективно сосать грудь, продолжать кормление по его потребности. Если прикладывание невозможно, подходящий способ сцеживания подбирают по ситуации. Не следует заставлять ребёнка «рассасывать застой» силой.</p>
+    </div>
+  </div>
 </section>
 
+<!-- СИТУАЦИОННЫЙ ТЕСТ -->
 <section id="situations" class="lilac">
- <div class="container">
-  <span class="eyebrow">08 / Практический интерактив</span>
-  <h2>Как поступить в этой ситуации?</h2>
-  <div class="card">
-   <div class="quiz-heading"><span class="tag">Мини-тест</span><span id="scenarioCounter"></span></div>
-   <h3 id="scenarioQuestion"></h3>
-   <div id="scenarioOptions"></div>
-   <div class="response hidden" id="scenarioFeedback"></div>
-   <button class="btn-light hidden" id="scenarioNext" onclick="nextScenario()">Следующая ситуация →</button>
+  <div class="container">
+    <span class="eyebrow">08 / Практический интерактив</span>
+    <h2>Как поступить в этой ситуации?</h2>
+
+    <div class="card">
+      <span class="tag" id="scenarioCounter"></span>
+      <h3 id="scenarioQuestion"></h3>
+      <div id="scenarioOptions"></div>
+      <div id="scenarioFeedback" class="response hidden" role="status"></div>
+      <button id="scenarioNext" class="btn-light hidden" onclick="nextScenario()">Следующая ситуация →</button>
+    </div>
   </div>
- </div>
 </section>
 
+<!-- ИСТОРИЯ И ОТЗЫВЫ -->
 <section id="moms">
- <div class="container">
-  <span class="eyebrow">09 / Пространство поддержки</span>
-  <h2>Мамы рядом ♡</h2>
-  <div class="media-grid">
-   <div>
-    <h3>Истории, в которых можно узнать себя</h3>
-    <p>Иногда поддержка начинается с того, что ты узнаёшь: другие мамы тоже сталкивались с трудностями.</p>
-   </div>
-   <img class="illustration" src="IMG_3936.jpeg"
-     alt="Нежная акварельная иллюстрация мамы с малышом" loading="lazy">
-  </div>
-  <div class="card">
-   <span class="tag">История пациентки М.</span>
-   <h3>«Я смогла продолжить кормление»</h3>
-   <div class="quote">
-    <p>В 19 лет я впервые стала мамой. После родов столкнулась с сильной болью в груди и температурой почти 40 градусов.</p>
-    <p>Мне было очень трудно кормить малыша. Родственница посоветовала капустные листья, но заметного облегчения они не принесли.</p>
-    <p>Позже я научилась правильно прикладывать ребёнка к груди. Моё состояние улучшилось, а грудное вскармливание стало комфортнее.</p>
-    <p>Несмотря на трудности, я продолжила кормить ребёнка грудью.</p>
-   </div>
-   <p><small>Анонимизированная история со слов участницы. Точный диагноз по воспоминаниям установить нельзя.</small></p>
-  </div>
+  <div class="container">
+    <span class="eyebrow">09 / Пространство поддержки</span>
+    <h2>Мамы рядом ♡</h2>
 
-  <h3>Отзывы о сайте</h3>
-  <p class="muted">Предпросмотр будущей системы отзывов. Сообщения в этой версии не передаются на сервер и не видны другим посетителям.</p>
-  <div id="reviews">
-   <div class="review">
-    <div class="review-head"><div class="avatar">🌸</div>
-     <div><strong>Пример отзыва</strong><small>Демонстрационная карточка, не отзыв реального посетителя</small></div>
+    <div class="media-grid">
+      <div>
+        <h3>Истории, в которых можно узнать себя</h3>
+        <p>Ты не обязана справляться со всеми трудностями одна. Иногда поддержка начинается с чужой истории.</p>
+      </div>
+      <img class="illustration" src="IMG_3936.jpeg"
+        alt="Мама с малышом — акварельная иллюстрация" loading="lazy">
     </div>
-    <p>Мне понравилось, что народные методы объясняются понятным языком и рядом есть рекомендации по безопасной помощи.</p>
-    <button class="btn-light" onclick="toggleDemoReply()">↩ Ответить</button>
-    <div id="demoReplies"></div>
-    <div id="demoReplyForm" class="hidden">
-     <textarea id="demoReplyText" rows="2" maxlength="500" placeholder="Напиши ответ..."></textarea>
-     <button class="btn-light" onclick="sendDemoReply()">Добавить ответ</button>
-    </div>
-   </div>
-  </div>
-  <button class="btn" onclick="toggleReviewForm()">♡ Оставить отзыв</button>
-  <div class="card hidden" id="reviewForm">
-   <h3>Поделись впечатлением</h3>
-   <label for="reviewName">Имя или псевдоним</label>
-   <input id="reviewName" maxlength="40">
-   <label for="reviewText">Твой отзыв</label>
-   <textarea id="reviewText" rows="4" maxlength="700"></textarea>
-   <button class="btn-light" onclick="addReview()">Добавить в предпросмотр</button>
-   <p><small>Не указывай личные медицинские данные. Отзыв виден только в текущем предпросмотре и исчезнет после перезагрузки.</small></p>
-  </div>
 
-  <div class="card center">
-   <span class="eyebrow">Особенно для тебя</span>
-   <h2>Маленькое письмо поддержки</h2>
-   <p>Нажми на конвертик, чтобы открыть письмо.</p>
-   <button class="envelope" onclick="toggleLetter()" id="envelope" aria-label="Открыть письмо" aria-expanded="false">💌</button>
-   <div class="response hidden" id="letter">
-    <h3>Ты не одна ♡</h3>
-    <p>Ты можешь уставать, задавать вопросы и просить помощи. Забота о себе — это тоже забота о малыше.</p>
-   </div>
+    <div class="card">
+      <span class="tag">Анонимная история пациентки М.</span>
+      <h3>«Я смогла продолжить кормление»</h3>
+
+      <div class="quote">
+        <p>В 19 лет я впервые стала мамой. После родов столкнулась с сильной болью в груди и температурой почти 40 градусов.</p>
+        <p>Мне было очень трудно кормить малыша. Родственница посоветовала капустные листья, но заметного облегчения они не принесли.</p>
+        <p>Позже я научилась правильно прикладывать ребёнка к груди. Моё состояние улучшилось, а кормление стало комфортнее.</p>
+        <p>Несмотря на трудности, я смогла продолжить грудное вскармливание.</p>
+      </div>
+
+      <p><small>Анонимизированный рассказ со слов участницы. Точный диагноз по воспоминаниям установить нельзя.</small></p>
+    </div>
+
+    <h3>Отзывы о сайте</h3>
+    <p>Поделись впечатлением или ответь на сообщение. Пока это демонстрация: отзывы не публикуются для других посетителей.</p>
+
+    <div id="reviews">
+      <div class="review">
+        <div class="review-head">
+          <div class="avatar">🌸</div>
+          <div>
+            <strong>Демонстрационный отзыв</strong>
+            <small>Пример оформления, не отзыв реального посетителя</small>
+          </div>
+        </div>
+
+        <p>Здесь удобно узнавать, какие народные советы не подтверждаются доказательной медициной.</p>
+
+        <button class="btn-light" onclick="toggleDemoReply()">↩ Ответить</button>
+        <div id="demoReplies"></div>
+
+        <div id="demoReplyForm" class="hidden">
+          <textarea id="demoReplyText" maxlength="500" rows="2" placeholder="Напиши ответ..."></textarea>
+          <button class="btn-light" onclick="sendDemoReply()">Добавить ответ</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn" onclick="toggleReviewForm()">♡ Оставить отзыв</button>
+
+    <div class="card hidden" id="reviewForm">
+      <h3>Поделись впечатлением</h3>
+      <label for="reviewName">Имя или псевдоним</label>
+      <input id="reviewName" maxlength="40">
+      <label for="reviewText">Твой отзыв</label>
+      <textarea id="reviewText" rows="4" maxlength="700"></textarea>
+      <button class="btn-light" onclick="addReview()">Добавить в предпросмотр</button>
+      <p><small>Не указывай личные медицинские данные. Отзыв виден только на твоём экране до перезагрузки сайта.</small></p>
+    </div>
+
+    <div class="card center">
+      <span class="eyebrow">Маленькая поддержка</span>
+      <h2>Письмо для тебя ♡</h2>
+      <p>Нажми на конвертик.</p>
+
+      <button id="envelope" class="envelope"
+        onclick="toggleLetter()" aria-label="Открыть письмо" aria-expanded="false">💌</button>
+
+      <div id="letter" class="response hidden">
+        <h3>Ты не одна ♡</h3>
+        <p>Ты можешь уставать, задавать вопросы и просить помощи. Забота о тебе самой тоже важна.</p>
+      </div>
+    </div>
   </div>
- </div>
 </section>
 
+<!-- НАУЧНАЯ ОСНОВА -->
 <section id="sources" class="pink">
- <div class="container">
-  <span class="eyebrow">10 / Проверенная информация</span>
-  <h2>Научная основа проекта</h2>
-  <div class="card sources">
-   <h3>📚 Клинические рекомендации и материалы</h3>
-   <a href="https://cr.minzdrav.gov.ru/" target="_blank" rel="noopener noreferrer">
-    Минздрав России — рубрикатор клинических рекомендаций ↗
-   </a>
-   <a href="https://doi.org/10.1089/bfm.2022.29207.kbm" target="_blank" rel="noopener noreferrer">
-    Academy of Breastfeeding Medicine, Protocol № 36: The Mastitis Spectrum (2022) ↗
-   </a>
-   <a href="https://www.nhs.uk/best-start-in-life/baby/feeding-your-baby/breastfeeding/" target="_blank" rel="noopener noreferrer">
-    NHS — Breastfeeding guidance ↗
-   </a>
-   <a href="https://www.who.int/health-topics/breastfeeding" target="_blank" rel="noopener noreferrer">
-    ВОЗ — Breastfeeding ↗
-   </a>
+  <div class="container">
+    <span class="eyebrow">10 / Достоверная информация</span>
+    <h2>Научная основа проекта</h2>
+
+    <div class="card sources">
+      <h3>📚 Клинические рекомендации</h3>
+
+      <a href="https://cr.minzdrav.gov.ru/" target="_blank" rel="noopener noreferrer">
+        Минздрав России — официальный рубрикатор клинических рекомендаций ↗
+      </a>
+
+      <a href="https://doi.org/10.1089/bfm.2022.29207.kbm" target="_blank" rel="noopener noreferrer">
+        Academy of Breastfeeding Medicine. Clinical Protocol № 36: The Mastitis Spectrum (2022) ↗
+      </a>
+
+      <a href="https://www.nhs.uk/best-start-in-life/baby/feeding-your-baby/breastfeeding/" target="_blank" rel="noopener noreferrer">
+        NHS — рекомендации по грудному вскармливанию ↗
+      </a>
+
+      <a href="https://www.who.int/health-topics/breastfeeding" target="_blank" rel="noopener noreferrer">
+        ВОЗ — информация о грудном вскармливании ↗
+      </a>
+    </div>
+
+    <div class="card center">
+      <div style="font-size:35px">🎓</div>
+      <h3>О проекте</h3>
+      <p>«Лактостаз: народные рецепты против доказательной медицины»</p>
+
+      <hr style="border:0;border-top:1px solid #ead5e2;margin:22px 0">
+
+      <span class="eyebrow">Работу выполнила</span>
+      <h3>Капелюш Софья Владимировна</h3>
+      <p>Студентка 2-го курса Хабаровского государственного медицинского колледжа, специальность «Лечебное дело».</p>
+
+      <hr style="border:0;border-top:1px solid #ead5e2;margin:22px 0">
+
+      <span class="eyebrow">Научный руководитель</span>
+      <h3>Иванова Александра Евгеньевна</h3>
+    </div>
   </div>
-  <div class="card center">
-   <div style="font-size:35px">🎓</div>
-   <h3>О проекте</h3>
-   <p>«Лактостаз: народные рецепты против доказательной медицины»</p>
-   <hr style="border:0;border-top:1px solid #ead4e2;margin:22px 0">
-   <span class="eyebrow">Работу выполнила</span>
-   <h3>Капелюш Софья Владимировна</h3>
-   <p>Студентка 2-го курса Хабаровского государственного медицинского колледжа, специальность «Лечебное дело».</p>
-   <hr style="border:0;border-top:1px solid #ead4e2;margin:22px 0">
-   <span class="eyebrow">Научный руководитель</span>
-   <h3>Иванова Александра Евгеньевна</h3>
-  </div>
- </div>
 </section>
+
 </main>
 
-<footer class="foot">
- <div class="logo">✿ ЛактоСТОП</div>
- <p>Знания помогают. Поддержка объединяет.</p>
- <p><small>Образовательный сайт. Не заменяет консультацию медицинского специалиста.</small></p>
- <p>☁ ♡ ✧</p>
+<footer class="footer">
+  <div class="logo">✿ ЛактоСТОП</div>
+  <p>Знания помогают. Поддержка объединяет.</p>
+  <p><small>Образовательный сайт. Информация не заменяет консультацию медицинского специалиста.</small></p>
+  <p>☁ ♡ ✧</p>
 </footer>
 
 <script>
-const questions=[
- {q:"Сильное разминание помогает быстрее убрать уплотнение.",a:false,
- info:"Интенсивное разминание может повреждать ткани и усиливать отёк."},
- {q:"Капустные листья доказанно устраняют причину лактостаза.",a:false,
- info:"Убедительных доказательств такого эффекта нет."},
- {q:"Температура около 40 °C требует срочной медицинской оценки.",a:true,
- info:"Высокая температура и ухудшение состояния требуют срочной помощи."},
- {q:"Спиртовые компрессы доказанно лечат мастит.",a:false,
- info:"Это не доказанное лечение, и оно может раздражать кожу."},
- {q:"Молоко необходимо обязательно сцедить до последней капли.",a:false,
- info:"Чрезмерное сцеживание может поддерживать проблему."},
- {q:"При болезненности груди всегда необходимо прекращать кормление.",a:false,
- info:"Во многих случаях кормление возможно с учётом состояния и рекомендаций врача."}
-];
-let qIndex=0,qScore=0,qAnswered=false,qFinished=false;
+/* Помощник */
+function showHelp(i) {
+  const texts = [
+    "Избегай сильного массажа и чрезмерного сцеживания. Сохраняй привычное кормление, если это возможно. При сохранении или усилении боли обратись к врачу.",
+    "Высокая температура с болью в груди требует медицинской оценки. При температуре около 40 °C, сильном ознобе или выраженной слабости обращайся за срочной помощью.",
+    "Организуй комфортное прикладывание, избегай травматичных манипуляций. Если трудности повторяются, обратись за консультацией."
+  ];
+  const el = document.getElementById("helpAnswer");
+  el.textContent = texts[i];
+  el.classList.remove("hidden");
+}
 
-function renderQuestion(){
- document.getElementById("counter").textContent=`${qIndex+1} из ${questions.length}`;
- document.getElementById("question").textContent=questions[qIndex].q;
- document.getElementById("progress").innerHTML=questions.map((_,i)=>
- `<span class="${i<=qIndex?"active":""}"></span>`).join("");
- document.getElementById("feedback").classList.add("hidden");
- document.getElementById("quizOptions").classList.remove("hidden");
- document.getElementById("next").classList.add("hidden");
- qAnswered=false;
+/* Квиз: все 6 исходных вопросов */
+const questions = [
+  {
+    q:"Сильное разминание помогает быстрее убрать уплотнение.",
+    a:false,
+    info:"Интенсивное разминание может повреждать ткани и усиливать отёк."
+  },
+  {
+    q:"Капустные листья доказанно устраняют причину лактостаза.",
+    a:false,
+    info:"Капустные листья не являются доказанным лечением лактостаза. Убедительных доказательств устранения ими причины симптомов нет."
+  },
+  {
+    q:"Температура около 40 °C требует срочной медицинской оценки.",
+    a:true,
+    info:"Высокая температура и ухудшение состояния требуют срочной помощи."
+  },
+  {
+    q:"Спиртовые компрессы доказанно лечат мастит.",
+    a:false,
+    info:"Это не доказанное лечение, и оно может раздражать кожу."
+  },
+  {
+    q:"Молоко необходимо обязательно сцедить до последней капли.",
+    a:false,
+    info:"Чрезмерное сцеживание может поддерживать проблему."
+  },
+  {
+    q:"При болезненности груди всегда необходимо прекращать кормление.",
+    a:false,
+    info:"Во многих случаях кормление возможно с учётом состояния и рекомендаций врача."
+  }
+];
+
+let qIndex=0;
+let qScore=0;
+let qAnswered=false;
+let qFinished=false;
+
+function renderQuestion() {
+  document.getElementById("counter").textContent =
+    (qIndex+1)+" из "+questions.length;
+
+  document.getElementById("question").textContent =
+    questions[qIndex].q;
+
+  document.getElementById("progress").innerHTML =
+    questions.map((q,i) =>
+      '<span class="'+(i<=qIndex?'active':'')+'"></span>'
+    ).join("");
+
+  document.getElementById("quizOptions").classList.remove("hidden");
+  document.getElementById("feedback").classList.add("hidden");
+  document.getElementById("next").classList.add("hidden");
+  qAnswered=false;
 }
-function answer(value){
- if(qAnswered)return;
- qAnswered=true;
- const correct=value===questions[qIndex].a;
- if(correct)qScore++;
- const f=document.getElementById("feedback");
- f.textContent=(correct?"Верно! ♡ ":"Не совсем так. ")+questions[qIndex].info;
- f.classList.remove("hidden");
- const btn=document.getElementById("next");
- btn.textContent=qIndex===questions.length-1?"Показать результат":"Следующий вопрос →";
- btn.classList.remove("hidden");
+
+function answer(value) {
+  if(qAnswered) return;
+  qAnswered=true;
+
+  const correct=value===questions[qIndex].a;
+  if(correct) qScore++;
+
+  const el=document.getElementById("feedback");
+  el.textContent =
+    (correct?"Верно! ♡ ":"Не совсем так. ")+questions[qIndex].info;
+  el.classList.remove("hidden");
+
+  const next=document.getElementById("next");
+  next.textContent=qIndex===questions.length-1
+    ?"Посмотреть результат":"Следующий вопрос →";
+  next.classList.remove("hidden");
 }
-function nextQuestion(){
- if(qFinished){qFinished=false;qIndex=0;qScore=0;renderQuestion();return;}
- if(qIndex<questions.length-1){qIndex++;renderQuestion();return;}
- qFinished=true;
- document.getElementById("counter").textContent="Завершено";
- document.getElementById("question").textContent=`Твой результат: ${qScore} из ${questions.length} ♡`;
- document.getElementById("quizOptions").classList.add("hidden");
- const f=document.getElementById("feedback");
- f.textContent="Это образовательный тест, а не медицинская диагностика.";
- f.classList.remove("hidden");
- document.getElementById("next").textContent="Пройти заново";
+
+function nextQuestion() {
+  if(qFinished) {
+    qFinished=false;
+    qIndex=0;
+    qScore=0;
+    renderQuestion();
+    return;
+  }
+
+  if(qIndex<questions.length-1) {
+    qIndex++;
+    renderQuestion();
+    return;
+  }
+
+  qFinished=true;
+  document.getElementById("counter").textContent="Завершено";
+  document.getElementById("question").textContent=
+    "Твой результат: "+qScore+" из "+questions.length+" ♡";
+
+  document.getElementById("quizOptions").classList.add("hidden");
+
+  const el=document.getElementById("feedback");
+  el.textContent="Это образовательный тест, а не медицинская диагностика.";
+  el.classList.remove("hidden");
+
+  document.getElementById("next").textContent="Пройти заново";
 }
 renderQuestion();
 
-function showHelp(n){
- const texts=[
- "Не разминай грудь через боль и не сцеживай дополнительно «до конца». Продолжай кормление в привычном ритме, если это возможно. При сохранении или усилении симптомов обратись к врачу.",
- "Высокая температура вместе с болью в груди требует своевременной медицинской оценки. При температуре около 40 °C, сильном ознобе или выраженной слабости нужна срочная помощь.",
- "Старайся организовать комфортное прикладывание и избегай травматичных манипуляций. При повторяющихся трудностях обратись к специалисту."
- ];
- const el=document.getElementById("helpAnswer");
- el.textContent=texts[n];el.classList.remove("hidden");
+/* Ситуационный тест */
+const scenarios = [
+  {
+    q:"Появилось болезненное уплотнение. Что лучше сделать?",
+    options:["Сильно размять грудь","Использовать прохладный компресс через ткань"],
+    correct:1,
+    info:"Прохлада может облегчать боль и отёк, а сильный массаж может травмировать ткани."
+  },
+  {
+    q:"Во время кормления сохраняется сильная боль. Что делать?",
+    options:["Получить помощь с прикладыванием","Продолжать кормление через сильную боль без изменений"],
+    correct:0,
+    info:"При выраженной или сохраняющейся боли важно оценить прикладывание и обратиться к специалисту."
+  },
+  {
+    q:"Температура почти 40 °C и сильный озноб. Что делать?",
+    options:["Ограничиться домашними средствами","Срочно обратиться за медицинской помощью"],
+    correct:1,
+    info:"Выраженные общие симптомы требуют срочной медицинской оценки."
+  }
+];
+
+let sIndex=0;
+let sAnswered=false;
+
+function renderScenario() {
+  const s=scenarios[sIndex];
+  document.getElementById("scenarioCounter").textContent=
+    (sIndex+1)+" из "+scenarios.length;
+  document.getElementById("scenarioQuestion").textContent=s.q;
+
+  const box=document.getElementById("scenarioOptions");
+  box.replaceChildren();
+
+  s.options.forEach((label,i)=>{
+    const btn=document.createElement("button");
+    btn.className="option";
+    btn.textContent=label;
+    btn.onclick=()=>chooseScenario(i);
+    box.appendChild(btn);
+  });
+
+  document.getElementById("scenarioFeedback").classList.add("hidden");
+  document.getElementById("scenarioNext").classList.add("hidden");
+  sAnswered=false;
 }
 
-const scenarios=[
- {q:"Появилось болезненное уплотнение. Что лучше сделать?",
- options:["Сильно размять участок","Приложить прохладный компресс через ткань"],
- correct:1,info:"Прохлада может уменьшить боль и отёк. Сильный массаж может повреждать ткани."},
- {q:"При кормлении сохраняется боль. Что делать?",
- options:["Обратиться за помощью с прикладыванием","Продолжать через сильную боль без изменений"],
- correct:0,info:"При сохраняющейся боли стоит проверить прикладывание и получить профессиональную помощь."},
- {q:"Температура почти 40 °C и сильный озноб. Что выбрать?",
- options:["Ограничиться народными средствами","Срочно обратиться за медицинской помощью"],
- correct:1,info:"Выраженные общие симптомы требуют срочной медицинской оценки."}
-];
-let sIndex=0,sAnswered=false;
-function renderScenario(){
- document.getElementById("scenarioCounter").textContent=`${sIndex+1} из ${scenarios.length}`;
- document.getElementById("scenarioQuestion").textContent=scenarios[sIndex].q;
- const el=document.getElementById("scenarioOptions");
- el.replaceChildren();
- scenarios[sIndex].options.forEach((text,i)=>{
-  const btn=document.createElement("button");
-  btn.className="option";btn.textContent=text;
-  btn.onclick=()=>chooseScenario(i);
-  el.appendChild(btn);
- });
- document.getElementById("scenarioFeedback").classList.add("hidden");
- document.getElementById("scenarioNext").classList.add("hidden");
- sAnswered=false;
+function chooseScenario(value) {
+  if(sAnswered) return;
+  sAnswered=true;
+
+  const s=scenarios[sIndex];
+  const correct=value===s.correct;
+
+  const el=document.getElementById("scenarioFeedback");
+  el.textContent=(correct?"Верно! ♡ ":"Не совсем так. ")+s.info;
+  el.classList.remove("hidden");
+
+  const next=document.getElementById("scenarioNext");
+  next.textContent=sIndex===scenarios.length-1
+    ?"Начать заново":"Следующая ситуация →";
+  next.classList.remove("hidden");
 }
-function chooseScenario(n){
- if(sAnswered)return;sAnswered=true;
- const s=scenarios[sIndex];
- const el=document.getElementById("scenarioFeedback");
- el.textContent=(n===s.correct?"Верно! ♡ ":"Не совсем так. ")+s.info;
- el.classList.remove("hidden");
- document.getElementById("scenarioNext").classList.remove("hidden");
- document.getElementById("scenarioNext").textContent=
- sIndex===scenarios.length-1?"Начать заново":"Следующая ситуация →";
+
+function nextScenario() {
+  sIndex=(sIndex+1)%scenarios.length;
+  renderScenario();
 }
-function nextScenario(){sIndex=(sIndex+1)%scenarios.length;renderScenario();}
 renderScenario();
 
-function toggleLetter(){
- const el=document.getElementById("letter");
- const open=el.classList.toggle("hidden")===false;
- document.getElementById("envelope").textContent=open?"💗":"💌";
- document.getElementById("envelope").setAttribute("aria-expanded",String(open));
+/* Письмо поддержки */
+function toggleLetter() {
+  const el=document.getElementById("letter");
+  const isHidden=el.classList.toggle("hidden");
+  document.getElementById("envelope").textContent=isHidden?"💌":"💗";
+  document.getElementById("envelope").setAttribute(
+    "aria-expanded",String(!isHidden)
+  );
 }
 
-function toggleReviewForm(){
- document.getElementById("reviewForm").classList.toggle("hidden");
+/* Демонстрационные отзывы */
+function toggleDemoReply() {
+  document.getElementById("demoReplyForm").classList.toggle("hidden");
 }
-function toggleDemoReply(){
- document.getElementById("demoReplyForm").classList.toggle("hidden");
+
+function sendDemoReply() {
+  const field=document.getElementById("demoReplyText");
+  const value=field.value.trim();
+  if(!value)return;
+
+  const reply=document.createElement("div");
+  reply.className="reply";
+  reply.textContent=value;
+
+  document.getElementById("demoReplies").appendChild(reply);
+  field.value="";
+  toggleDemoReply();
 }
-function sendDemoReply(){
- const field=document.getElementById("demoReplyText");
- const val=field.value.trim();if(!val)return;
- const rep=document.createElement("div");
- rep.className="reply";rep.textContent=val;
- document.getElementById("demoReplies").appendChild(rep);
- field.value="";toggleDemoReply();
+
+function toggleReviewForm() {
+  document.getElementById("reviewForm").classList.toggle("hidden");
 }
-function addReview(){
- const name=document.getElementById("reviewName");
- const msg=document.getElementById("reviewText");
- if(!name.value.trim()||!msg.value.trim()){
-  alert("Заполни имя и отзыв.");return;
- }
- const card=document.createElement("div");
- card.className="review";
- const head=document.createElement("div");
- head.className="review-head";
- const avatar=document.createElement("div");
- avatar.className="avatar";avatar.textContent="💗";
- const who=document.createElement("div");
- const author=document.createElement("strong");
- author.textContent=name.value.trim();
- const note=document.createElement("small");
- note.textContent="Предпросмотр — не опубликовано";
- who.append(author,note);head.append(avatar,who);
- const content=document.createElement("p");
- content.textContent=msg.value.trim();
- const replyBtn=document.createElement("button");
- replyBtn.className="btn-light";
- replyBtn.textContent="↩ Ответить";
- const replies=document.createElement("div");
- const form=document.createElement("div");
- form.className="hidden";
- const field=document.createElement("textarea");
- field.rows=2;field.maxLength=500;
- field.placeholder="Твой ответ...";
- const send=document.createElement("button");
- send.className="btn-light";send.textContent="Добавить ответ";
- replyBtn.onclick=()=>form.classList.toggle("hidden");
- send.onclick=()=>{
-  if(!field.value.trim())return;
-  const rep=document.createElement("div");
-  rep.className="reply";rep.textContent=field.value.trim();
-  replies.appendChild(rep);field.value="";
-  form.classList.add("hidden");
- };
- form.append(field,send);
- card.append(head,content,replyBtn,replies,form);
- document.getElementById("reviews").prepend(card);
- name.value="";msg.value="";
- toggleReviewForm();
+
+function addReview() {
+  const name=document.getElementById("reviewName");
+  const message=document.getElementById("reviewText");
+
+  if(!name.value.trim()||!message.value.trim()) {
+    alert("Заполни имя и текст отзыва.");
+    return;
+  }
+
+  const card=document.createElement("div");
+  card.className="review";
+
+  const head=document.createElement("div");
+  head.className="review-head";
+
+  const avatar=document.createElement("div");
+  avatar.className="avatar";
+  avatar.textContent="💗";
+
+  const authorBox=document.createElement("div");
+  const author=document.createElement("strong");
+  author.textContent=name.value.trim();
+
+  const note=document.createElement("small");
+  note.textContent="Предпросмотр — не опубликовано";
+  authorBox.append(author,note);
+  head.append(avatar,authorBox);
+
+  const text=document.createElement("p");
+  text.textContent=message.value.trim();
+
+  const replyButton=document.createElement("button");
+  replyButton.className="btn-light";
+  replyButton.textContent="↩ Ответить";
+
+  const replies=document.createElement("div");
+  const replyForm=document.createElement("div");
+  replyForm.className="hidden";
+
+  const replyText=document.createElement("textarea");
+  replyText.rows=2;
+  replyText.maxLength=500;
+  replyText.placeholder="Напиши ответ...";
+
+  const sendButton=document.createElement("button");
+  sendButton.className="btn-light";
+  sendButton.textContent="Добавить ответ";
+
+  replyButton.onclick=()=>{
+    replyForm.classList.toggle("hidden");
+  };
+
+  sendButton.onclick=()=>{
+    if(!replyText.value.trim())return;
+
+    const reply=document.createElement("div");
+    reply.className="reply";
+    reply.textContent=replyText.value.trim();
+    replies.appendChild(reply);
+
+    replyText.value="";
+    replyForm.classList.add("hidden");
+  };
+
+  replyForm.append(replyText,sendButton);
+  card.append(head,text,replyButton,replies,replyForm);
+
+  document.getElementById("reviews").prepend(card);
+
+  name.value="";
+  message.value="";
+  toggleReviewForm();
 }
+
+/* Плавное появление карточек */
+const cards=document.querySelectorAll(".reveal");
 
 if("IntersectionObserver" in window &&
- !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
- const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-   if(e.isIntersecting){e.target.classList.add("visible");obs.unobserve(e.target);}
-  });
- },{threshold:.06});
- document.querySelectorAll(".reveal").forEach(e=>obs.observe(e));
-}else{
- document.querySelectorAll(".reveal").forEach(e=>e.classList.add("visible"));
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.05});
+
+  cards.forEach(card=>observer.observe(card));
+} else {
+  cards.forEach(card=>card.classList.add("visible"));
 }
 </script>
+
 </body>
 </html>
